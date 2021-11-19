@@ -1,0 +1,299 @@
+@import _vars.sass
+@import _utility
+*
+    box-sizing: border-box
+    outline: none
+
+a
+    text-decoration: none
+    color: inherit
+
+a, button
+    cursor: pointer
+input, button
+    border: none
+    padding: 0
+    background: none
+
+p, ul, h1, h2, h3, h4, h5, h6, ol
+    padding: 0
+    margin: 0
+    font-weight: normal
+
+ul, ol
+    list-style: none
+
+button, input
+    display: inline-block
+
+body
+    font-family: Open Sans, sans-serif
+    background-color: #fff
+header, main, footer
+    overflow: hidden
+
+//sitecontent
+.sitecontent
+    display: flex
+    align-items: flex-start
+//sitebar
+.sitebar
+    border-right: 5px 
+    border-color: #313131
+    position: fixed
+    height: calc( 1wh * 100 )
+    &-card
+        display: flex
+        justify-content: center
+        padding-right: 14px
+        padding-left: 14px
+        padding-top: 10px
+        padding-bottom: 10px
+        &__svg
+//header
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background-image: url(../img/header-bg-img.jfif)
+    background-size: contain
+    padding: 20px 65px 20px 30px
+    &-left
+        display: flex
+        align-items: center
+        justify-content: center
+        &-logo
+        &-contacts
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            margin-left: 30px
+            &__title
+                color: #FFFFFF
+                opacity: 0.75
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 12px
+                line-height: 12px
+            &__number
+                color: #FFFFFF
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 18px
+                line-height: 18px
+                margin-top: 4px
+        &-pages
+            &-list
+                display: flex
+                align-items: center
+                justify-content: center
+                &__item
+                    margin-left: 30px
+                    &--link
+                        color: #FFFFFF
+                        opacity: 0.75
+                        font-family: HelveticaNeueCyr
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 14px
+                        line-height: 14px
+.far
+    color: #fff
+.far:first-child
+    margin-right: 5px
+.fa
+    color: #fff
+
+//info
+.info
+    padding-top: 23px
+    padding-bottom: 23px
+    padding-left: 110px
+    &-top
+        display: flex
+        align-items: center
+        cursor: pointer
+        &__title
+            font-family: HelveticaNeueCyr
+            font-style: normal
+            font-weight: normal
+            font-size: 14px
+            line-height: 14px
+        &__img
+            margin-left: 12px
+            transform: rotate(0deg)
+            transition: transform 0.5s
+    &-bottom
+        padding-top: 23px
+        display: none
+        &__title
+            font-family: HelveticaNeueCyr
+            font-style: normal
+            font-weight: bold
+            font-size: 18px
+            line-height: 21px
+        &__subtitle
+            font-family: HelveticaNeueCyr
+            font-style: normal
+            font-weight: normal
+            font-size: 14px
+            line-height: 16px
+        &-list
+            list-style: inside
+            &__item
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 16px
+.info-top.active
+    .info-top__img
+        transform: rotate(-180deg)
+        transition: transform 0.5s
+
+//else
+.else
+    display: flex
+    align-items: center
+    padding-top: 60px
+    padding-bottom: 30px
+    padding-left: 110px
+    &-list
+        display: flex
+        align-items: center
+        margin-left: 12px
+
+        &__item
+            position: relative
+            margin-right: 18px
+            &:not(:last-child)
+                &::after
+                    content: ''
+                    position: absolute
+                    width: 6px
+                    height: 6px
+                    top: 50%
+                    transform: translateY(-50%)
+                    right: -13px
+                    background-color: #000
+                    border-radius: 50%
+            &--link
+
+//footer
+.footer
+    padding-top: 30px
+    padding-left: 110px
+    padding-bottom: 30px
+    margin-right: 60px
+    &-nav
+        display: flex
+        align-items: center
+        &__link
+            margin-right: 27px
+            font-family: HelveticaNeueCyr
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 16px
+    &-wrap
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-top: 60px
+        &-card
+            display: flex
+            flex-direction: column
+            max-width: 18%
+            &--right
+                align-items: flex-end
+                flex-wrap: wrap
+            &__subtitle
+                margin-bottom: 60px
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 19px
+            &__link
+                margin-bottom: 20px
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 16px
+                &--liquid
+                    font-weight: 300
+            &__info
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: 900
+                font-size: 16px
+                line-height: 15px
+                margin-bottom: 60px
+            &__contact
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: 900
+                font-size: 16px
+                line-height: 15px
+            &-contacts
+                display: flex
+                align-items: center
+                margin-top: 20px
+                &__subtitle
+                    margin-left: 7px
+            &__number
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 24px
+                line-height: 24px
+                margin-bottom: 15px
+            &__pay
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: 900
+                font-size: 16px
+                line-height: 15px
+            &__img
+                width: 300px
+                margin-bottom: 15px
+                margin-top: 15px
+            &__option
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 16px
+    &__offer
+        font-family: HelveticaNeueCyr
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 16px
+        margin-right: auto
+        margin-left: auto
+        text-align: center
+        max-width: 80%
+        margin-top: 60px
+    &-company
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-top: 37px
+        &-link
+            margin-right: 11px
+            &__img
+                width: 35px
+                height: 30px
+        &__subtitle
+            font-family: HelveticaNeueCyr
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 16px
+.footer-wrap-card-contacts
+    .far
+        color: #000
