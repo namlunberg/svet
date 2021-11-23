@@ -38,10 +38,11 @@ header, main, footer
     align-items: flex-start
 //sitebar
 .sitebar
-    border-right: 5px 
+    border-right: 5px
     border-color: #313131
-    position: fixed
+    //position: fixed
     height: calc( 1wh * 100 )
+    background-color: #fff
     &-card
         display: flex
         justify-content: center
@@ -50,6 +51,10 @@ header, main, footer
         padding-top: 10px
         padding-bottom: 10px
         &__svg
+
+//maincontent
+.maincontent
+    width: 100%
 //header
 .header
     display: flex
@@ -105,12 +110,138 @@ header, main, footer
     margin-right: 5px
 .fa
     color: #fff
+//breadcrumb
+.breadcrumb
+    display: flex
+    align-items: center
+    &-list
+        padding-left: 16px
+        padding-right: 16px
+        display: flex
+        align-items: center
+        justify-content: center
+        &__item
+            position: relative
+            &::after
+                padding: 8px
+                color: black
+                content: "/\00a0"
+            &:last-child
+                &::after
+                    content: ""
+            &--link
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 14px
+                color: rgba(34, 34, 34, 0.75)
+.breadcrumb
+    .fas
+        color: #282828
+//submenu
+.submenu
+    padding-top: 30px
+    padding-bottom: 30px
+    &__title
+        font-family: HelveticaNeueCyr
+        font-style: normal
+        font-weight: normal
+        font-size: 36px
+        line-height: 36px
+        color: #222222
+        margin-bottom: 15px
+    &-wrap
+        display: flex
+        align-items: center
+        &-link
+            display: flex
+            flex-direction: column
+            max-width: 100px
+            max-height: 112px
+            height: 100%
+            margin-right: 60px
+            &__subtitle
+                text-align: center
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 14px
+                margin-top: 13px
 
+//maincontent-wrap
+.maincontent-wrap
+    &-top
+        display: flex
+        align-items: center
+    &-bottom
+    //filter
+.filter
+    &-top
+        &-button
+            background: #313131
+            display: inline-flex
+            align-items: center
+            padding: 23px 70px 23px 70px
+            &__title
+                margin-right: 5px
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 14px
+                color: #FFFFFF
+            &__img
+                transition: transform 0.5s
+    &-bottom
+        display: none
+        padding-top: 18px
+.filter-top.active
+    .filter-top-button__img
+        transform: rotate(-180deg)
+        transition: transform 0.5s
+    //priority
+.priority
+    margin-left: 30px
+    margin-right: 30px
+    position: relative
+    &-top
+        &-btn
+            display: flex
+            align-items: center
+            &__desk
+                margin-right: 4px
+        &__target
+            cursor: pointer
+    &-bottom
+        position: absolute
+        padding: 20px 30px
+        top: 0
+        left: 0
+        display: none
+        &-head
+            display: flex
+            align-items: center
+            justify-content: space-between
+            &__desk
+            &__img
+                max-width: 10px
+                transition: transform 0.5s
+                cursor: pointer
+                &:hover
+                    transform: rotate(360deg)
+                    transition: transform 0.5s
+        &-items
+            display: flex
+            flex-direction: column
+            padding-top: 10px            
+            &__link
+                margin-top: 10px                    
 //info
 .info
     padding-top: 23px
     padding-bottom: 23px
-    padding-left: 110px
     &-top
         display: flex
         align-items: center
@@ -159,7 +290,6 @@ header, main, footer
     align-items: center
     padding-top: 60px
     padding-bottom: 30px
-    padding-left: 110px
     &-list
         display: flex
         align-items: center
@@ -184,9 +314,7 @@ header, main, footer
 //footer
 .footer
     padding-top: 30px
-    padding-left: 110px
     padding-bottom: 30px
-    margin-right: 60px
     &-nav
         display: flex
         align-items: center
