@@ -27,10 +27,19 @@ button, input
     display: inline-block
 
 body
-    font-family: Open Sans, sans-serif
+    font-family: HelveticaNeueCyr, sans-serif
     background-color: #fff
 header, main, footer
     overflow: hidden
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+/* Firefox */
+input[type=number]
+    -moz-appearance: textfield
 
 //sitecontent
 .sitecontent
@@ -179,7 +188,6 @@ header, main, footer
         justify-content: space-between
     &-bottom
         display: flex
-        flex-wrap: wrap
 
 .filter
     &-top
@@ -203,10 +211,107 @@ header, main, footer
             &__img
                 transition: transform 0.5s
     &-bottom
-        display: none
-        padding-top: 18px
+        display: block
         max-width: 290px
         width: 100%
+        &-element
+            padding-left: 20px
+            padding-right: 20px
+            padding-top: 17px
+            padding-bottom: 17px
+            border-bottom: 1px solid #efefef
+            border-right: 1px solid #efefef
+            &--divider
+                width: 100%
+                display: inline-block
+                height: 1px
+                background-color: #efefef
+                margin-bottom: 15px
+            &-head
+                margin-bottom: 15px
+                display: flex
+                justify-content: space-between
+                width: 100%
+                &__title
+                    font-size: 14px
+                    line-height: 14px
+                    color: $black
+                &__arrow
+                    width: 20px
+                    height: 20px
+            &-body
+                display: flex
+                flex-direction: column
+                &-wrap
+                    display: flex
+                    flex-direction: column
+                    width: 50%
+                    justify-content: start
+                &--row
+                    flex-direction: row
+                    justify-content: space-between
+                &:first-child
+                    display: flex
+                    justify-content: space-between
+                &__input
+                & label
+                    margin-bottom: 10px
+                &-toddler
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    &-label
+                        display: flex
+                        align-items: center
+                        width: 90px
+                        height: 24px
+                        border: 1px solid #D9D9D9
+                        box-sizing: border-box
+                        border-radius: 1px
+                        padding: 5px 10px
+                        &__input
+                            font-family: HelveticaNeueCyr
+                            font-style: normal
+                            font-weight: normal
+                            font-size: 14px
+                            line-height: 14px
+                            color: #222222
+        &__btn
+            background: #313131
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            padding-top: 23px
+            padding-bottom: 23px
+            width: 290px
+            cursor: pointer
+.filter__toddler
+    margin-top: 10px
+    margin-bottom: 3px
+.noUi-target
+    box-shadow: none
+    border-radius: 100px
+    height: 4px
+.filter__toddler
+    .noUi-connect
+        background: #313131
+.noUi-handle::after
+    display: none
+.noUi-handle::before
+    display: none
+.noUi-handle
+    box-shadow: none
+    border-radius: 100%
+    border: 2px solid #313131
+.noUi-horizontal .noUi-handle
+    width: 14px
+    height: 14px
+
+.noUi-horizontal .noUi-handle-upper
+    right: 0px
+.noUi-horizontal .noUi-handle-lower
+    right: 0px
+
 .filter-top.active
     .filter-top-button__img
         transform: rotate(-180deg)
@@ -271,13 +376,47 @@ header, main, footer
             &__desk
                 margin-left: 30px
 .cards
+    display: grid
+    grid-template-columns: repeat(auto-fill, 250px)
+    grid-template-rows: repeat(auto-fill, 375px)
+    width: 100%
+    &-wrap
+        position: relative
     &-card
         padding: 20px 15px 25px 15px
+        min-width: 250px
+        background-color: #fff
+        position: relative
+        &:hover
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25)
+            position: absolute
+            z-index: 100
+            .cards-card-onhover
+                display: block
+            .cards-card-top
+                opacity: 1
+        &-top
+            opacity: 0
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            display: flex
+            &__like
+                width: 24px
+                height: 24px
+            &__left
+                background-color: #00CC00
+                padding: 5px
+                border-radius: 2px
+                font-size: 16px
+                color: #fff
         &-link
             &-images
+                height: 150px
                 &__img
                     width: 220px
         &-items
+            margin-bottom: 20px
             &__title
                 font-family: HelveticaNeueCyr
                 font-style: normal
@@ -322,20 +461,117 @@ header, main, footer
                 color: #222222
                 &--country
                     color: rgba(34, 34, 34, 0.75)
+        &-onhover
+            width: 100%
+            display: none
+            &__code
+                font-size: 14px
+                line-height: 14px
+                color: $black
+                opacity: 0.75
+                margin-bottom: 25px
+                b
+                    font-size: 16px
+                    line-height: 16px
+                    color: $black
+                    font-weight: normal
+            &-size
+                display: flex
+                margin-bottom: 20px
+                &-params
+                    display: flex
+                    flex-direction: column
+                    &:first-child
+                        margin-right: 30px
+
+                    &__tag
+                        font-size: 12px
+                        line-height: 12px
+                        color: $black
+                        opacity: 0.75
+                        margin-bottom: 6px
+                    &__num
+                        font-size: 16px
+                        line-height: 16px
+                        color: $black
+            &-tocart
+                display: flex
+                &__count
+                    font-size: 16px
+                    color: $black
+                    padding-left: 20px
+                    padding-right: 20px
+                    padding-top: 12px
+                    padding-bottom: 11px
+                    border-left: 1px solid rgba(34, 34, 34, 0.2)
+                    border-top: 1px solid rgba(34, 34, 34, 0.2)
+                    border-bottom: 1px solid rgba(34, 34, 34, 0.2)
+                    border-radius: 2px
+                &__btn
+                    background-color: #FFAF24
+                    padding-left: 20px
+                    padding-right: 20px
+                    padding-top: 10px
+                    padding-bottom: 10px
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    color: #fff
+                    &--img
+                        width: 24px
+                        height: 24px
+                        margin-right: 15px
 .cards-card-items-status
     .fas
         color: #00CC00
 .mini-slider
-    display: none
+    position: relative
+    z-index: 1
+    display: flex
+    width: 100%
+    height: 100%
+    &__slide
+        width: 100%
+        &__img
+            position: absolute
+            left: 0
+            top: 0
+            z-index: -1
+            width: 100%
+            height: 100%
+            object-fit: contain
+            opacity: 0
+    &__dots
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 3px
+        z-index: 2
+        background-color: #c4c4c4
+        height: 2px
+        width: 100%
+    &__dot
+        width: 100%
+        height: 2px
+        &--active
+            background-color: $black
 
 //info
 .info
     padding-top: 23px
     padding-bottom: 23px
+    margin-bottom: 30px
     &-top
         display: flex
         align-items: center
         cursor: pointer
+        padding-left: 110px
+        padding-top: 23px
+        padding-bottom: 23px
+        background-color: #efefef
         &__title
             font-family: HelveticaNeueCyr
             font-style: normal
@@ -378,13 +614,15 @@ header, main, footer
 .else
     display: flex
     align-items: center
-    padding-top: 60px
+    padding-top: 30px
     padding-bottom: 30px
+    border-top: 1px solid #efefef
+    &__subtitle
+        padding-left: 110px
     &-list
         display: flex
         align-items: center
         margin-left: 12px
-
         &__item
             position: relative
             margin-right: 18px
@@ -405,86 +643,63 @@ header, main, footer
 .footer
     padding-top: 30px
     padding-bottom: 30px
-    &-nav
-        display: flex
-        align-items: center
-        &__link
-            margin-right: 27px
-            font-family: HelveticaNeueCyr
-            font-style: normal
-            font-weight: normal
-            font-size: 16px
-            line-height: 16px
+
     &-wrap
-        display: flex
-        align-items: center
-        justify-content: space-between
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: 76px 1fr 1fr
+        grid-gap: 5px
+        grid-template-areas: "nav nav nav nav" "links links links tels" "links links links payments"
         margin-top: 60px
-        &-card
+        &-nav
+            grid-area: nav
+            display: flex
+            align-items: center
+            background-color: #efefef
+            padding-left: 110px
+            padding-right: 110px
+            &__link
+                margin-right: 27px
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 16px
+        &-links
+            grid-area: links
+            background-color: #efefef
+            display: flex
+            justify-content: space-between
+            padding-left: 110px
+            padding-right: 110px
+            &-card
+                display: flex
+                flex-direction: column
+                align-self: center
+                &__subtitle
+                &__link
+                &__info
+                &-contacts
+                    &__subtitle
+        &-tels
+            grid-area: tels
+            background-color: #efefef
+            text-align: right
             display: flex
             flex-direction: column
-            max-width: 18%
-            &--right
-                align-items: flex-end
-                flex-wrap: wrap
-            &__subtitle
-                margin-bottom: 60px
-                font-family: HelveticaNeueCyr
-                font-style: normal
-                font-weight: normal
-                font-size: 16px
-                line-height: 19px
-            &__link
-                margin-bottom: 20px
-                font-family: HelveticaNeueCyr
-                font-style: normal
-                font-weight: normal
-                font-size: 14px
-                line-height: 16px
-                &--liquid
-                    font-weight: 300
-            &__info
-                font-family: HelveticaNeueCyr
-                font-style: normal
-                font-weight: 900
-                font-size: 16px
-                line-height: 15px
-                margin-bottom: 60px
-            &__contact
-                font-family: HelveticaNeueCyr
-                font-style: normal
-                font-weight: 900
-                font-size: 16px
-                line-height: 15px
-            &-contacts
-                display: flex
-                align-items: center
-                margin-top: 20px
-                &__subtitle
-                    margin-left: 7px
+            justify-content: center
             &__number
-                font-family: HelveticaNeueCyr
-                font-style: normal
-                font-weight: normal
-                font-size: 24px
-                line-height: 24px
-                margin-bottom: 15px
+
+        &-payments
+            grid-area: payments
+            background-color: #efefef
+            text-align: right
             &__pay
-                font-family: HelveticaNeueCyr
-                font-style: normal
-                font-weight: 900
-                font-size: 16px
-                line-height: 15px
+                justify-self: end
             &__img
-                width: 300px
-                margin-bottom: 15px
-                margin-top: 15px
+                justify-self: end
             &__option
-                font-family: HelveticaNeueCyr
-                font-style: normal
-                font-weight: normal
-                font-size: 16px
-                line-height: 16px
+                justify-self: end
     &__offer
         font-family: HelveticaNeueCyr
         font-style: normal
