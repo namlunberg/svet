@@ -62,15 +62,15 @@ $(document).ready(function () {
         });
     });
 
-    const rangeSlider = document.getElementById('range-slider');
+    const rangeSlider1 = document.getElementById('range-slider-1');
 
-    if (rangeSlider) {            
-        noUiSlider.create(rangeSlider, {
-            start: [900, 2172017],
+    if (rangeSlider1) {            
+        noUiSlider.create(rangeSlider1, {
+            start: [0, 2172017],
             connect: true,
             step: 1,
             range: {
-                'min': [900],
+                'min': [0],
                 'max': [2172017],
             }
         });
@@ -79,9 +79,58 @@ $(document).ready(function () {
         const input1 = document.getElementById('input-1');
         const inputs = [input0, input1];
 
-        rangeSlider.noUiSlider.on('update', function(values, handle){
-            inputs[handle].values = Math.round(values[handle]);
+        rangeSlider1.noUiSlider.on('update', function(values, handle){
+
+            const rangeValuesInputs = this.target.parentElement.parentElement            
+            rangeValuesInputs.querySelector('.filter-bottom-element-body-toddler-label__input--min').value = Math.round(values[0])
+            rangeValuesInputs.querySelector('.filter-bottom-element-body-toddler-label__input--max').value = Math.round(values[1])
+            console.log(this)
         });
+        let priceLimits = rangeSlider1.noUiSlider.get()
+        document.querySelector('.filter-bottom-element-body-toddler-label__input--min').addEventListener('input', function (event) {
+            console.log(event.target.value)
+            priceLimits[0] = event.target.value
+            rangeSlider1.noUiSlider.set(priceLimits)
+        })
+        document.querySelector('.filter-bottom-element-body-toddler-label__input--max').addEventListener('input', function (event) {
+            console.log(event.target.value)
+            priceLimits[1] = event.target.value
+            rangeSlider1.noUiSlider.set(priceLimits)
+        })        
+    }
+
+    const rangeSlider2 = document.getElementById('range-slider-2');
+
+    if (rangeSlider2) {            
+        noUiSlider.create(rangeSlider2, {
+            start: [0, 1500],
+            connect: true,
+            step: 1,
+            range: {
+                'min': [0],
+                'max': [1500],
+            }
+        });
+
+        const input0 = document.getElementById('input-2');
+        const input1 = document.getElementById('input-3');
+        const inputs = [input0, input1];
+
+        rangeSlider2.noUiSlider.on('update', function(values, handle){
+
+            const rangeValuesInputs = this.target.parentElement.parentElement            
+            rangeValuesInputs.querySelector('.filter-bottom-element-body-toddler-label__input--min').value = Math.round(values[0])
+            rangeValuesInputs.querySelector('.filter-bottom-element-body-toddler-label__input--max').value = Math.round(values[1])
+        });
+        let priceLimits = rangeSlider2.noUiSlider.get()
+        document.querySelector('.range-slider-2 .filter-bottom-element-body-toddler-label__input--min').addEventListener('input', function (event) {
+            priceLimits[0] = event.target.value
+            rangeSlider2.noUiSlider.set(priceLimits)
+        })
+        document.querySelector('.range-slider-2 .filter-bottom-element-body-toddler-label__input--max').addEventListener('input', function (event) {
+            priceLimits[1] = event.target.value
+            rangeSlider2.noUiSlider.set(priceLimits)
+        })
     }
     
 });
