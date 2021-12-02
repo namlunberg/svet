@@ -132,5 +132,18 @@ $(document).ready(function () {
             rangeSlider2.noUiSlider.set(priceLimits)
         })
     }
+
+    // let checkbox = $('.filter-bottom-element-body__span');
+    // let filterCheckboxes = $('.filter-bottom-element-body__input');
+
+    // filterCheckboxes.on('click', function () {
+    //   if (checkbox.prop('checked') == true) {
+    //     checkbox.prop('checked', false);
+    //   } else {
+    //     checkbox.prop('checked', true);
+    //   }
+    // });
+
+    
     
 });

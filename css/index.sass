@@ -45,12 +45,14 @@ input[type=number]
 .sitecontent
     display: flex
     align-items: flex-start
+    overflow: scroll
+    position: relative
 //sitebar
 .sitebar
     border-right: 5px
     border-color: #313131
-    //position: fixed
-    height: calc( 1wh * 100 )
+    position: sticky
+    height: calc( 1vh * 100 )
     background-color: #fff
     &-card
         display: flex
@@ -189,6 +191,7 @@ input[type=number]
     &-bottom
         display: flex
 
+//filter
 .filter
     &-top
         &-button
@@ -254,8 +257,49 @@ input[type=number]
                     display: flex
                     justify-content: space-between
                 &__input
+                    display: none
+                    & ~ b
+                        color: #00CC00   
                 & label
                     margin-bottom: 10px
+                &__span
+                    width: 16px
+                    height: 16px
+                    display: inline-flex
+                    align-items: center
+                    justify-content: center
+                    background-color: #fff
+                    border: 1px solid #D9D9D9
+                    box-sizing: border-box
+                    border-radius: 1px
+                    position: relative
+                    &::after
+                        position: absolute
+                        content: ''
+                        display: inline-block
+                        width: 4px
+                        height: 4px
+                        border-radius: 100%
+                        background-color: #fff
+                &__radio
+                    width: 16px
+                    height: 16px
+                    display: inline-flex
+                    align-items: center
+                    justify-content: center
+                    background-color: #fff
+                    border: 1px solid #D9D9D9
+                    box-sizing: border-box
+                    border-radius: 100%
+                    position: relative
+                    &::after
+                        position: absolute
+                        content: ''
+                        display: inline-block
+                        width: 10px
+                        height: 10px
+                        border-radius: 100%
+                        background-color: #fff
                 &-toddler
                     display: flex
                     align-items: center
@@ -286,6 +330,7 @@ input[type=number]
             padding-bottom: 23px
             width: 290px
             cursor: pointer
+            color: #FFFFFF
 .filter__toddler
     margin-top: 10px
     margin-bottom: 3px
@@ -315,6 +360,10 @@ input[type=number]
     margin-bottom: 0 !important
     padding-bottom: 16px
     border: 1px solid #EFEFEF
+.filter-bottom-element-body__input:checked + .filter-bottom-element-body__span::after
+    background-color: #D9D9D9
+.filter-bottom-element-body__input:checked + .filter-bottom-element-body__radio::after
+    background-color: #D9D9D9
 
 .filter-top.active
     .filter-top-button__img
@@ -568,11 +617,11 @@ input[type=number]
     padding-top: 23px
     padding-bottom: 23px
     margin-bottom: 30px
+    padding-left: 45px
     &-top
         display: flex
         align-items: center
         cursor: pointer
-        padding-left: 110px
         padding-top: 23px
         padding-bottom: 23px
         background-color: #efefef
@@ -621,8 +670,8 @@ input[type=number]
     padding-top: 30px
     padding-bottom: 30px
     border-top: 1px solid #efefef
+    padding-left: 45px
     &__subtitle
-        padding-left: 110px
     &-list
         display: flex
         align-items: center
@@ -660,7 +709,7 @@ input[type=number]
             display: flex
             align-items: center
             background-color: #efefef
-            padding-left: 110px
+            padding-left: 45px
             padding-right: 110px
             &__link
                 margin-right: 27px
@@ -674,7 +723,7 @@ input[type=number]
             background-color: #efefef
             display: flex
             justify-content: space-between
-            padding-left: 110px
+            padding-left: 45px
             padding-right: 110px
             &-card
                 display: flex
