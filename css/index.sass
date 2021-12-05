@@ -45,23 +45,49 @@ input[type=number]
 .sitecontent
     display: flex
     align-items: flex-start
-    overflow: scroll
-    position: relative
+    overflow-y: scroll
 //sitebar
 .sitebar
-    border-right: 5px
-    border-color: #313131
     position: sticky
-    height: calc( 1vh * 100 )
     background-color: #fff
-    &-card
-        display: flex
-        justify-content: center
-        padding-right: 14px
-        padding-left: 14px
-        padding-top: 10px
-        padding-bottom: 10px
-        &__svg
+    display: flex
+    &-buttons
+        &-button
+            display: flex
+            justify-content: space-between
+            padding-right: 14px
+            padding-left: 14px
+            padding-top: 10px
+            padding-bottom: 10px
+            &:last-child
+            &__svg
+                margin-right: auto
+            &__desk
+                margin-left: auto
+                margin-right: auto
+            &__img
+                margin-left: auto
+    &-choises
+        position: absolute
+        right: -210px
+        background: #313131
+        //box-shadow: 5px 0px 10px rgba(31, 12, 12, 0.25)
+        padding-left: 30px
+        padding-top: 15px
+        padding-right: 15px
+        z-index: 100
+        &-wrap
+            &-head
+                display: flex
+                align-items: center
+                justify-content: space-between
+                &__title
+                    font-family: HelveticaNeueCyr
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 36px
+                    line-height: 36px
+                    color: #FFFFFF
 
 //maincontent
 .maincontent
@@ -259,7 +285,7 @@ input[type=number]
                 &__input
                     display: none
                     & ~ b
-                        color: #00CC00   
+                        color: #00CC00
                 & label
                     margin-bottom: 10px
                 &__span
