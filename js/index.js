@@ -144,6 +144,18 @@ $(document).ready(function () {
     //   }
     // });
 
+    $('.sitebar-buttons-button').on('click', function() {
+        $('.sitebar-buttons-button').removeClass('active');
+        $('.sitebar-choises-wrap').hide();
+
+        let target = $(this).attr('data-target');
+
+        $(this).addClass('active');
+        $('.sitebar-choises-wrap[data-target='+ target +']').show();
+    });
     
-    
+    $('.sitebar-choises-wrap-head__img').on('click', function() {
+        $('.sitebar-choises-wrap').hide();
+    });
+
 });
