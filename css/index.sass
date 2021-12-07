@@ -45,7 +45,8 @@ input[type=number]
 .sitecontent
     display: flex
     align-items: flex-start
-    overflow: scroll
+    overflow: visible
+
 //sitebar
 .sitebar
     position: sticky
@@ -53,21 +54,33 @@ input[type=number]
     display: flex
     top: 0
     z-index: 111
-    min-width: 250px
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25)
     border-right: 5px solid #313131
+    min-width: 65px
     &-buttons
+        display: flex
+        flex-direction: column
+        height: calc( 1vh * 100 )
+        justify-content: space-between
+        position: absolute
+        top: 0
+        left: 0
+        background-color: #fff
+        &--wrapper
         &-button
             display: flex
             align-items: center
             width: 100%
+            &:last-of-type                
+                justify-self: flex-end
+                align-self: flex-end
             &-wrap
                 min-width: 65px
                 height: 50px
                 display: flex
                 align-items: center
                 justify-content: center
-                margin-right: 13px
+                transition: all 0.5s
                 &__svg
             &__desk
                 font-family: HelveticaNeueCyr
@@ -78,17 +91,28 @@ input[type=number]
                 color: #222222
                 text-align: left
                 width: 100%
+                display: none
+                transition: all 0.5s
             &__img
                 transform: rotate(-90deg)
+                display: none
+                transition: all 0.5s
     &-choises
         position: absolute
-        right: -417px
+        right: -579px
         background: #313131
         box-shadow: 5px 0px 10px rgba(31, 12, 12, 0.25)
         padding-top: 15px
         min-width: 417px
         width: 100%
+        height: 100vh
+        display: none
         &-wrap
+            &--wrapper
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                height: calc( 1vh * 95 )
             &-head
                 display: flex
                 align-items: center
@@ -102,6 +126,8 @@ input[type=number]
                     font-size: 36px
                     line-height: 36px
                     color: #FFFFFF
+                &__img
+                    cursor: pointer
             &-items
                 display: flex
                 flex-wrap: wrap
@@ -159,14 +185,24 @@ input[type=number]
     .sitebar-choises-wrap-items-card__desc
         color: #FAC240
         transition: color 0.5s
-.sitebar-choises-wrap:not(:first-child)
-    display: none
 .sitebar-buttons-button.active
     background: #313131
     .sitebar-buttons-button-wrap__svg path
         fill: #FFFFFF
     .sitebar-buttons-button__desk
         color: #FFFFFF
+.sitebar-buttons:hover
+    .sitebar-buttons-button-wrap
+        margin-right: 13px
+        transition: all 0.5s
+    .sitebar-buttons-button__desk
+        display: block
+        transition: all 0.5s
+    .sitebar-buttons-button__img
+        display: block
+        transition: all 0.5s
+    .sitebar
+        min-width: 250px
 //maincontent
 .maincontent
     width: 100%
@@ -230,6 +266,7 @@ input[type=number]
     display: flex
     align-items: center
     margin-top: 20px
+    padding-left: 28px
     &-list
         padding-left: 16px
         padding-right: 16px
@@ -259,6 +296,7 @@ input[type=number]
 .submenu
     padding-top: 30px
     padding-bottom: 30px
+    padding-left: 28px
     &__title
         font-family: HelveticaNeueCyr
         font-style: normal
@@ -285,13 +323,30 @@ input[type=number]
                 font-size: 14px
                 line-height: 14px
                 margin-top: 13px
-
+                transition: color 0.5s
+            &__svg path
+                transition: fill 0.5s
+.submenu-wrap-link:hover
+    .submenu-wrap-link__svg path
+        fill: #FAC240
+        transition: fill 0.5s
+    .submenu-wrap-link__subtitle
+        color: #FAC240
+        transition: color 0.5s
+.submenu-wrap-link:active
+    .submenu-wrap-link__svg path
+        fill: #FAC240
+        transition: fill 0.5s
+    .submenu-wrap-link__subtitle
+        color: #FAC240
+        transition: color 0.5s
 //maincontent-wrap
 .maincontent-wrap
     &-top
         display: flex
         align-items: center
         justify-content: space-between
+        padding-right: 185px
     &-bottom
         display: flex
 
@@ -493,11 +548,12 @@ input[type=number]
     &-bottom
         position: absolute
         padding: 20px 20px
-        top: -19px
+        top: -15px
         left: 0
         background-color: #fff
         box-shadow: 0 5px 15px rgba(0, 0, 0, 35%)
         display: none
+        z-index: 5
         &-head
             display: flex
             align-items: center
@@ -532,6 +588,8 @@ input[type=number]
             justify-content: center
             &__desk
                 margin-left: 30px
+
+//cards
 .cards
     display: grid
     grid-template-columns: repeat(auto-fill, 250px)
@@ -722,6 +780,7 @@ input[type=number]
     padding-bottom: 23px
     margin-bottom: 30px
     padding-left: 45px
+    padding-right: 60px
     &-top
         display: flex
         align-items: center

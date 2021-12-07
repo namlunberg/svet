@@ -10,13 +10,11 @@ $(document).ready(function () {
     });
 
     $('.priority-top').on('click', function () {
-        $(this).toggleClass('active');
-        $('.priority-bottom').slideToggle();
+        $('.priority-bottom').show();
     });
 
     $('.priority-bottom-head__img').on('click', function () {
-        $(this).toggleClass('active');
-        $('.priority-bottom').slideToggle();
+        $('.priority-bottom').hide();
     });
 
     /* mini slider - смена картинок при движение мыши */
@@ -155,7 +153,11 @@ $(document).ready(function () {
     });
     
     $('.sitebar-choises-wrap-head__img').on('click', function() {
-        $('.sitebar-choises-wrap').hide();
+        $('.sitebar-choises').hide();
+    });
+
+    $('.sitebar-buttons-button').on('click', function() {
+        $('.sitebar-choises').show();
     });
 
 });
