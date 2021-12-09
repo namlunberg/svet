@@ -307,28 +307,6 @@ input[type=number] {
   color: #FFFFFF;
 }
 
-.sitebar-buttons:hover .sitebar-buttons-button-wrap {
-  margin-right: 13px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.sitebar-buttons:hover .sitebar-buttons-button__desk {
-  display: block;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.sitebar-buttons:hover .sitebar-buttons-button__img {
-  display: block;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.sitebar-buttons:hover .sitebar {
-  min-width: 250px;
-}
-
 .maincontent {
   width: 100%;
 }
@@ -1595,5 +1573,17 @@ input[type=number] {
 
 .footer-wrap-card-contacts .far {
   color: #000;
+}
+
+@media (max-width: 1400px) {
+  .header-left-contacts__number {
+    font-size: 14px;
+  }
+  .header-left-pages-list__item {
+    margin-left: 20px;
+  }
+  .header-left-contacts__title {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
