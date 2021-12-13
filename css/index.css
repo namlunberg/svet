@@ -1487,6 +1487,71 @@ input[type=number] {
       align-self: center;
 }
 
+.footer-wrap-links-card__subtitle {
+  margin-bottom: 25px;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  color: #222222;
+}
+
+.footer-wrap-links-card__link {
+  margin-top: 15px;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  color: #222222;
+}
+
+.footer-wrap-links-card__link--liquid {
+  font-weight: 300;
+}
+
+.footer-wrap-links-card__info {
+  margin-bottom: 25px;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 15px;
+  color: #222222;
+}
+
+.footer-wrap-links-card__contact {
+  margin-top: 15px;
+  margin-bottom: -5px;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 15px;
+  color: #222222;
+}
+
+.footer-wrap-links-card-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15px;
+}
+
+.footer-wrap-links-card-contacts__subtitle {
+  margin-left: 5px;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #222222;
+}
+
 .footer-wrap-tels {
   -ms-grid-row: 2;
   -ms-grid-column: 4;
@@ -1505,6 +1570,16 @@ input[type=number] {
           justify-content: center;
 }
 
+.footer-wrap-tels__number {
+  margin-bottom: 15px;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  color: #222222;
+}
+
 .footer-wrap-payments {
   -ms-grid-row: 3;
   -ms-grid-column: 4;
@@ -1514,6 +1589,12 @@ input[type=number] {
 }
 
 .footer-wrap-payments__pay {
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 15px;
+  text-align: right;
   -ms-grid-column-align: end;
       justify-self: end;
 }
@@ -1521,11 +1602,21 @@ input[type=number] {
 .footer-wrap-payments__img {
   -ms-grid-column-align: end;
       justify-self: end;
+  max-width: 300px;
+  margin-top: 16px;
+  margin-bottom: 15px;
 }
 
 .footer-wrap-payments__option {
   -ms-grid-column-align: end;
       justify-self: end;
+  font-family: HelveticaNeueCyr;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: right;
+  color: #222222;
 }
 
 .footer__offer {
@@ -1537,7 +1628,7 @@ input[type=number] {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  max-width: 80%;
+  max-width: 75%;
   margin-top: 60px;
 }
 
@@ -1571,8 +1662,26 @@ input[type=number] {
   line-height: 16px;
 }
 
-.footer-wrap-card-contacts .far {
-  color: #000;
+.iconfont-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.iconfont-wrap .fas {
+  color: #222222;
+}
+
+.iconfont-wrap .far {
+  color: #222222;
 }
 
 @media (max-width: 1400px) {

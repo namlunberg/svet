@@ -894,10 +894,52 @@ input[type=number]
                 flex-direction: column
                 align-self: center
                 &__subtitle
+                    margin-bottom: 25px
+                    font-family: HelveticaNeueCyr
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 16px
+                    line-height: 16px
+                    color: #222222
                 &__link
+                    margin-top: 15px
+                    font-family: HelveticaNeueCyr
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 16px
+                    line-height: 16px
+                    color: #222222
+                    &--liquid
+                        font-weight: 300
                 &__info
+                    margin-bottom: 25px
+                    font-family: HelveticaNeueCyr
+                    font-style: normal
+                    font-weight: 900
+                    font-size: 16px
+                    line-height: 15px
+                    color: #222222
+                &__contact
+                    margin-top: 15px
+                    margin-bottom: -5px
+                    font-family: HelveticaNeueCyr
+                    font-style: normal
+                    font-weight: 900
+                    font-size: 16px
+                    line-height: 15px
+                    color: #222222
                 &-contacts
+                    display: flex
+                    align-items: center
+                    margin-top: 15px
                     &__subtitle
+                        margin-left: 5px
+                        font-family: HelveticaNeueCyr
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 14px
+                        line-height: 14px
+                        color: #222222
         &-tels
             grid-area: tels
             background-color: #efefef
@@ -906,17 +948,40 @@ input[type=number]
             flex-direction: column
             justify-content: center
             &__number
+                margin-bottom: 15px
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 24px
+                line-height: 24px
+                color: #222222
 
         &-payments
             grid-area: payments
             background-color: #efefef
             text-align: right
             &__pay
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: 900
+                font-size: 16px
+                line-height: 15px
+                text-align: right
                 justify-self: end
             &__img
                 justify-self: end
+                max-width: 300px
+                margin-top: 16px
+                margin-bottom: 15px
             &__option
                 justify-self: end
+                font-family: HelveticaNeueCyr
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 16px
+                text-align: right
+                color: #222222
     &__offer
         font-family: HelveticaNeueCyr
         font-style: normal
@@ -926,7 +991,7 @@ input[type=number]
         margin-right: auto
         margin-left: auto
         text-align: center
-        max-width: 80%
+        max-width: 75%
         margin-top: 60px
     &-company
         display: flex
@@ -944,10 +1009,16 @@ input[type=number]
             font-weight: normal
             font-size: 16px
             line-height: 16px
-.footer-wrap-card-contacts
+.iconfont-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 12px
+    height: 12px
+    .fas
+        color: #222222
     .far
-        color: #000
-
+        color: #222222
 // Media
 @media ( max-width: 1400px )
     .header-left-contacts__number
