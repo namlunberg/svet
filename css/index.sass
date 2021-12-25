@@ -57,6 +57,16 @@ input[type=number]
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25)
     border-right: 5px solid #313131
     min-width: 65px
+    &-bg
+        pointer-events: none
+        opacity: 0
+    &__close
+        position: absolute
+        left: 105%
+        top: 15px
+        display: none
+        &--cross
+            opacity: 0.7
     &-buttons
         display: flex
         flex-direction: column
@@ -128,6 +138,8 @@ input[type=number]
                     color: #FFFFFF
                 &__img
                     cursor: pointer
+                &__btn
+                    display: none
             &-items
                 display: flex
                 flex-wrap: wrap
@@ -168,6 +180,8 @@ input[type=number]
                     font-size: 16px
                     line-height: 16px
                     color: #FFFFFF
+.sitebar-choices-wrap-head__btn
+    display: none
 .sitebar-choises-wrap-items-card__svg path
     fill: #FFFFFF
     transition: fill 0.5s
@@ -191,19 +205,7 @@ input[type=number]
         fill: #FFFFFF
     .sitebar-buttons-button__desk
         color: #FFFFFF
-// .sitebar-buttons:hover,
-// .sitebar-choises:hover
-//     .sitebar-buttons-button-wrap
-//         margin-right: 13px
-//         transition: all 0.5s
-//     .sitebar-buttons-button__desk
-//         display: block
-//         transition: all 0.5s
-//     .sitebar-buttons-button__img
-//         display: block
-//         transition: all 0.5s
-//     .sitebar
-//         min-width: 250px
+
 //maincontent
 .maincontent
     width: 100%
@@ -256,6 +258,16 @@ input[type=number]
                         font-weight: normal
                         font-size: 14px
                         line-height: 14px
+    &-mobile
+        width: 32px
+        height: 25px
+        display: none
+        flex-direction: column
+        justify-content: space-between
+        &__item
+            width: 100%
+            height: 4px
+            background-color: #fff
 .far
     color: #fff
 .far:first-child
@@ -491,6 +503,102 @@ input[type=number]
             width: 290px
             cursor: pointer
             color: #FFFFFF
+    &-popup
+        position: absolute
+        left: 110%
+        top: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        background-color: #fff
+        display: flex
+        flex-direction: column
+        align-items: center
+        &-selection
+            z-index: 998
+            left: 110%
+            transition: all 0.5s
+        &-tab
+            z-index: 999
+            left: 110%
+            transition: all 0.5s
+        &-top
+            background: #EFEFEF
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25)
+            padding-top: 13px
+            padding-bottom: 13px
+            display: flex
+            justify-content: center
+            align-items: center
+            position: relative
+            width: 100%
+            &__title
+                color: #222222
+                font-size: 24px
+                line-height: 24px
+            &__close
+                position: absolute
+                right: 15px
+                top: 9px
+                width: 32px
+                height: 32px
+                &--icon
+                    width: 16px
+                    height: 16px
+            &__back
+                position: absolute
+                left: 15px
+                top: 9px
+                width: 32px
+                height: 32px
+                &--icon
+        &-bottom
+            width: 100%
+            padding-left: 15px
+            padding-right: 15px
+            &-tab
+                border: 1px solid #efefef
+                padding-left: 15px
+                padding-right: 21px
+                padding-top: 18px
+                padding-bottom: 18px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                &__title
+                    font-size: 14px
+                    line-height: 14px
+                    color: #222222
+                &__arrow
+                    transform: rotate(-90deg)
+            &-element
+                display: block
+        &__btn
+            background: #313131
+            margin-top: auto
+            margin-bottom: 15px
+            width: 95%
+            display: flex
+            justify-content: center
+            align-items: center
+            color: #fff
+            border-radius: 2px
+            height: 50px
+        &__reset
+            display: inline-block
+            padding-top: 16px
+            padding-bottom: 16px
+            padding-right: 13px
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: end
+            &--icon
+                margin-right: 12px
+.show
+    left: 0
+    display: flex
 .filter__toddler
     margin-top: 10px
     margin-bottom: 3px
@@ -498,6 +606,7 @@ input[type=number]
     box-shadow: none
     border-radius: 100px
     height: 4px
+    padding-left: 14px
 .filter__toddler
     .noUi-connect
         background: #313131
@@ -524,7 +633,10 @@ input[type=number]
     background-color: #D9D9D9
 .filter-bottom-element-body__input:checked + .filter-bottom-element-body__radio::after
     background-color: #D9D9D9
-
+.filter-mobile__btn
+    display: none
+.sort-mobile__btn
+    display: none
 .filter-top.active
     .filter-top-button__img
         transform: rotate(-180deg)
@@ -675,6 +787,7 @@ input[type=number]
                 font-size: 14px
                 line-height: 16px
                 color: #222222
+                position: relative
                 &--country
                     color: rgba(34, 34, 34, 0.75)
         &-onhover
@@ -733,6 +846,8 @@ input[type=number]
                     justify-content: space-between
                     align-items: center
                     color: #fff
+                    &--mobile
+                        display: none
                     &--img
                         width: 24px
                         height: 24px
@@ -780,7 +895,6 @@ input[type=number]
     padding-top: 23px
     padding-bottom: 23px
     margin-bottom: 30px
-    padding-left: 45px
     padding-right: 60px
     &-top
         display: flex
@@ -788,6 +902,7 @@ input[type=number]
         cursor: pointer
         padding-top: 23px
         padding-bottom: 23px
+        padding-left: 45px
         background-color: #efefef
         &__title
             font-family: HelveticaNeueCyr
@@ -1019,6 +1134,9 @@ input[type=number]
         color: #222222
     .far
         color: #222222
+
+
+
 // Media
 @media ( max-width: 1400px )
     .header-left-contacts__number
@@ -1027,3 +1145,165 @@ input[type=number]
         margin-left: 20px
     .header-left-contacts__title
         font-size: 10px
+@media (max-width: 1200px)
+    .footer-wrap
+        grid-template-rows: 76px 1fr 1fr 1fr
+        grid-template-areas: "nav nav nav nav" "tels tels tels tels" "payments payments payments payments" "links links links links"
+    .header-left-logo
+        width: 150px
+    .header-left-pages
+        width: 45%
+    .header-right
+        width: 10%
+    .submenu-wrap
+        overflow-x: scroll
+        height: 140px
+
+@media (max-width: 991px)
+    .sitebar
+        display: none        
+    .filter-bottom
+        display: none
+    .header-left-contacts
+        display: none
+    .header-left-pages-list
+        display: none
+    .far:first-child
+        display: none
+    .header
+        padding-left: 15px
+        padding-right: 15px
+    .header-mobile
+        display: flex
+    .header-right
+        width: unset
+    .header-left
+        margin: 0 auto
+    .cards
+        padding-left: 15px
+        padding-right: 15px
+    .info
+        padding-right: 0
+    .info-top
+        padding-left: 15px
+    .info-bottom
+        padding-left: 15px
+    .else
+        flex-wrap: wrap
+        padding-left: 16px
+    .else-list
+        flex-wrap: wrap
+        margin-left: 0
+    .footer-wrap-tels
+        text-align: center
+    .footer-wrap-payments__pay
+        text-align: center    
+    .footer-wrap-links
+        padding-right: 50px
+    .footer-wrap-nav
+        flex-wrap: wrap
+        padding-right: 0
+        padding-left: 16px
+    .footer-wrap-nav__link
+        max-width: 240px
+    .sitebar
+        position: absolute
+        width: 60%
+        transition: all 0.5s
+        left: -100%
+        display: block
+        z-index: 101
+    .sitebar__close
+        display: inline-block
+    .sitebar-buttons
+        position: unset
+    .sitebar-choises
+        right: unset
+        left: -300%
+        top: 0px
+
+        transition: all 0.5s
+    .sitebar-bg
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.6)
+        z-index: 100
+        transition: all 0.5s
+    .sitebar-choices-wrap-head__btn
+        display: inline-block
+    .cards
+        justify-content: space-between
+    .cards-card-onhover-tocart__btn--mobile
+        display: inline-block
+        position: absolute
+        right: 0
+        bottom: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 9px
+    .cards-card-onhover-tocart__btn--img--mobile
+        width: 24px
+        height: 24px
+        margin-right: 0
+
+@media (max-width: 768px)
+    .cards
+        grid-template-columns: 1fr 1fr
+
+@media (max-width: 576px)
+    .cards
+        grid-template-columns: 1fr
+        grid-template-rows: unset
+    .cards-card
+        border: 1px solid #EFEFEF
+        border-radius: 1px
+        margin-bottom: 15px
+
+    .sitebar-choises
+        min-width: calc( 1vw * 100 )
+
+    .filter
+        display: none
+    .priority
+        display: none
+    .wrapper
+        display: none
+    .filter-mobile__btn
+        display: inline-block
+        background-color: #313131
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 14px
+        color: #fff
+        margin-right: 5px
+        width: 50%
+        padding-top: 15px
+        padding-bottom: 15px
+        &--icon
+            margin-right: 10px
+    .sort-mobile__btn
+        display: inline-block
+        background-color: #fff
+        border: 1px solid #313131
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 14px
+        color: #313131
+        width: 50%
+        padding-top: 17px
+        padding-bottom: 17px
+        &--icon
+            margin-right: 10px
+    .maincontent-wrap-top
+        justify-content: center
+        padding-right: 15px
+        padding-left: 15px
+        margin-bottom: 30px
