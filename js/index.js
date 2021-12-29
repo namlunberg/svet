@@ -290,7 +290,7 @@ $(document).ready(function () {
         sitebarClose.css('display', 'none');
     }
 
-    
+
 
     if (window.matchMedia('(max-width: 768px)').matches) {
 
@@ -358,12 +358,13 @@ $(document).ready(function () {
         tabPopup.removeClass('show');
     })
 
+
     tabPopupMenuItem.click(function () {
         let target = $(this).attr('data-target');
 
 
         $('.filter-popup-tab[data-target=' + target + ']').addClass('show');
-        
+
     })
 
     backBtn.click(function () {

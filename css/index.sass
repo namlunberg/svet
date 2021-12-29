@@ -517,11 +517,11 @@ input[type=number]
         align-items: center
         &-selection
             z-index: 998
-            left: 110%
+            left: -110%
             transition: all 0.5s
         &-tab
             z-index: 999
-            left: 110%
+            left: -110%
             transition: all 0.5s
         &-top
             background: #EFEFEF
@@ -599,6 +599,7 @@ input[type=number]
 .show
     left: 0
     display: flex
+    position: fixed
 .filter__toddler
     margin-top: 10px
     margin-bottom: 3px
@@ -1179,9 +1180,28 @@ input[type=number]
         width: unset
     .header-left
         margin: 0 auto
+    .maincontent-wrap-top
+        padding-right: 25px
+    .wrapper
+        justify-content: end
+    .wrapper-summ
+        display: none
+    .priority
+        margin-right: 0
+        padding-left: 0
+    .priority-top-btn__desk
+        text-align: left
     .cards
         padding-left: 15px
         padding-right: 15px
+    .cards-card:hover
+        //z-index: 0
+        box-shadow: unset
+        position: relative
+        .cards-card-onhover
+            display: none
+        .cards-card-top
+                opacity: 0
     .info
         padding-right: 0
     .info-top
@@ -1196,16 +1216,27 @@ input[type=number]
         margin-left: 0
     .footer-wrap-tels
         text-align: center
+    .footer-wrap-payments
+        text-align: center
     .footer-wrap-payments__pay
         text-align: center    
     .footer-wrap-links
         padding-right: 50px
+        flex-wrap: wrap
+    .footer-wrap-links-card
+        width: 50%
+        margin-top: 30px
+    .footer-wrap-links-card__link--liquid
+        font-weight: normal
     .footer-wrap-nav
         flex-wrap: wrap
         padding-right: 0
         padding-left: 16px
     .footer-wrap-nav__link
         max-width: 240px
+    .iconfont-wrap
+        .far
+            display: block
     .sitebar
         position: absolute
         width: 60%
@@ -1255,6 +1286,7 @@ input[type=number]
 @media (max-width: 768px)
     .cards
         grid-template-columns: 1fr 1fr
+    
 
 @media (max-width: 576px)
     .cards
