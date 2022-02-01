@@ -36,6 +36,7 @@ button, input {
 body {
   font-family: HelveticaNeueCyr, sans-serif;
   background-color: #fff;
+  margin: 0;
 }
 
 header, main, footer {
@@ -110,6 +111,7 @@ input[type=number] {
   top: 0;
   left: 0;
   background-color: #fff;
+  border-right: 5px solid #313131;
 }
 
 .sitebar-buttons-button {
